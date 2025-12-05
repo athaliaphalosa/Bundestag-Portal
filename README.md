@@ -1,13 +1,9 @@
-# Blatt 3
-
-## Bundestag Reden Portal
+# Bundestag Reden Portal
 A Java web application for exploring speeches, speakers, sessions, and factions of the German Bundestag.
 Built with Javalin, Java, and FreeMarker templates, this project allows users to browse, search, and analyze parliamentary speeches and related statistics.
 
 
 ## Project Description
-This project is a continuation of Blatt 2.
-It extends the use of the ObjectFactory class from Blatt 2 and adds several new classes such as RESTHandler and AppProperties.
 In this project, a REST API is used that includes all CRUD operations (GET, POST, PUT, DELETE).
 Most endpoints are implemented using GET, but for the Redner, I implemented the full set of CRUD operations.
 FreeMarker is also used, along with FTL templates and CSS files located in the resources folder.
