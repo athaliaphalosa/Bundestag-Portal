@@ -1,0 +1,48 @@
+@startuml
+
+left to right direction
+
+actor User
+actor System
+
+rectangle "Reden - Portal" {
+
+    (Redner suchen) as UC1
+    (Redner Details) as UC2
+    (Rede Details) as UC4
+    (Fraktionen Anzeigen) as UC5
+    (Sitzungen Anzeigen) as UC6
+    (Statistiken Anzeigen) as UC7
+    (API Dokumentation) as UC8
+    (OpenAPI JSON generieren) as UC9
+    (Daten neu laden) as UC10
+    (Start Web Applikation) as UC11
+
+    UC5 -[hidden]- UC7
+    UC7 -[hidden]- UC9
+    UC9 -[hidden]- UC11
+
+    UC2 -[hidden]- UC4
+    UC4 -[hidden]- UC6
+    UC6 -[hidden]- UC8
+    UC8 -[hidden]- UC10
+
+    User --> UC1
+    User --> UC2
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC7
+    User --> UC8
+
+    System --> UC9
+    System --> UC10
+    System --> UC11
+
+    UC1 .> UC2 : include
+    UC7 .> UC2 : extend
+    UC7 .> UC4 : extend
+    UC7 .> UC5 : extend
+}
+@enduml
+

@@ -1,0 +1,232 @@
+@startuml
+
+title "Bundestag Reden Portal System"
+
+package "org.texttechnologylab.ppr.blatt3" {
+  package "utils" {
+    class MainUbung3 {
+      - ObjectFactory factory
+      + main(String[] args) : void
+      - startWebInterface() : void
+    }
+  }
+
+  package "config" {
+    class AppProperties {
+      - Properties properties
+      + AppProperties()
+      - loadProperties() : void
+      - setDefaults() : void
+      + getServerPort() : int
+      + getServerHost() : String
+      + getAppName() : String
+      + getAppVersion() : String
+      + getApiBasePath() : String
+      + getStaticDirectory() : String
+      + getTemplateDirectory() : String
+    }
+  }
+
+  package "rest" {
+    class RESTHandler {
+      - ObjectFactory factory
+      - AppProperties properties
+      - Javalin app
+      - List<Map<String, Object>> apiRoutes
+      + RESTHandler(ObjectFactory, AppProperties)
+      + start() : void
+      + stop() : void
+      - setupRoutes() : void
+      - registerApiRoute(String, String, String, String) : void
+      - generateOpenApi(Context) : void
+      - showSwaggerUI(Context) : void
+      - renderHomePage(Context) : void
+      - getAllRedner(Context) : void
+      - getRednerById(Context) : void
+      - searchRedner(Context) : void
+      - createRedner(Context) : void
+      - updateRedner(Context) : void
+      - deleteRedner(Context) : void
+      - getAllReden(Context) : void
+      - getRedeById(Context) : void
+      - getRedenByRedner(Context) : void
+      - getAllFraktionen(Context) : void
+      - getFraktionByName(Context) : void
+      - getAllSitzungen(Context) : void
+      - getSitzungById(Context) : void
+      - getStatistiken(Context) : void
+    }
+  }
+
+  package "data" {
+    package "helper" {
+      class NormalizeFraktion {
+        + FRAKTIONSLOS : String
+        + CDU_CSU : String
+        + SPD : String
+        + GRUENE : String
+        + AFD : String
+        + FDP : String
+        + LINKE : String
+        + BSW : String
+        + normalizeFraktion(String) : String
+      }
+
+      class XMLHelper {
+        + parseRedner(Element) : Redner
+        + parseSitzung(Element) : Sitzung
+        + parseRede(Element, Element) : Rede
+        + extrahiereRedeText(Element) : String
+      }
+    }
+
+    package "interfaces" {
+      interface FraktionIn {
+        + getName() : String
+      }
+
+      interface KommentarIn {
+        + getRedner() : Redner
+        + getRede() : Rede
+        + getTextk() : String
+      }
+
+      interface RedeIn {
+        + getRid() : String
+        + getRedner() : Redner
+        + getSitzung() : Sitzung
+        + getText() : String
+      }
+
+      interface RednerIn {
+        + getId() : String
+        + getTitel() : String
+        + getVorname() : String
+        + getNachname() : String
+        + getFraktion() : Fraktion
+      }
+
+      interface SitzungIn {
+        + getWahlperiode() : String
+        + getSitzungNr() : String
+        + getSitzungDatum() : Date
+        + getSitzungOrt() : String
+        + getStartZeit() : LocalTime
+        + getEndZeit() : LocalTime
+      }
+    }
+
+    package "redenportal" {
+      class ObjectFactory {
+        - List<Rede> alleRede
+        - Set<Redner> alleRedner
+        - Set<Sitzung> alleSitzung
+        - Set<Fraktion> alleFraktion
+        - Set<Kommentar> alleKommentar
+        + loadXML(String path) : void
+        + getAlleRede() : List<Rede>
+        + getAlleRedner() : Set<Redner>
+        + getAlleSitzung() : Set<Sitzung>
+        + getAlleFraktion() : Set<Fraktion>
+        + getAlleKommentar() : Set<Kommentar>
+      }
+
+      class Redner {
+        - String id
+        - String titel
+        - String vorname
+        - String nachname
+        - Fraktion fraktion
+        + getId() : String
+        + getTitel() : String
+        + getVorname() : String
+        + getNachname() : String
+        + getFraktion() : Fraktion
+      }
+
+      class Rede {
+        - String rid
+        - String text
+        - Redner redner
+        - Sitzung sitzung
+        - List<Kommentar> kommentar
+        + getRid() : String
+        + getText() : String
+        + getRedner() : Redner
+        + getSitzung() : Sitzung
+        + getKommentar() : List<Kommentar>
+        + setText(String) : void
+        + addKommentar(Kommentar) : void
+      }
+
+      class Fraktion {
+        - String namef
+        + getName() : String
+      }
+
+      class Sitzung {
+        - String wahlperiode
+        - String sitzungNr
+        - String sitzungOrt
+        - Date sitzungDatum
+        - LocalTime startZeit
+        - LocalTime endZeit
+        + getWahlperiode() : String
+        + getSitzungNr() : String
+        + getSitzungOrt() : String
+        + getSitzungDatum() : Date
+        + getStartZeit() : LocalTime
+        + getEndZeit() : LocalTime
+      }
+
+      class Kommentar {
+        - Redner redner
+        - Rede rede
+        - Fraktion fraktion
+        - String textk
+        + getRedner() : Redner
+        + getRede() : Rede
+        + getFraktion() : Fraktion
+        + getTextk() : String
+      }
+    }
+  }
+}
+
+MainUbung3 --> AppProperties : creates
+MainUbung3 --> ObjectFactory : creates
+MainUbung3 --> RESTHandler : creates and starts
+
+RESTHandler --> ObjectFactory : uses for data access
+RESTHandler --> AppProperties : uses for configuration
+
+ObjectFactory --> XMLHelper : uses for XML parsing
+XMLHelper ..> NormalizeFraktion : uses for normalization
+
+ObjectFactory "1" *-- "0..*" Redner : manages
+ObjectFactory "1" *-- "0..*" Rede : manages
+ObjectFactory "1" *-- "0..*" Fraktion : manages
+ObjectFactory "1" *-- "0..*" Sitzung : manages
+ObjectFactory "1" *-- "0..*" Kommentar : manages
+
+Rede "1" --> "1" Redner : delivered by
+Rede "1" --> "1" Sitzung : held in
+Rede "1" *-- "0..*" Kommentar : has comments
+Kommentar "1" --> "1" Redner : from redner
+Kommentar "1" --> "1" Rede : belongs to
+Kommentar "1" --> "1" Fraktion : via redner
+Redner "0..*" --> "1" Fraktion : belongs to
+
+Fraktion ..|> FraktionIn : implements
+Kommentar ..|> KommentarIn : implements
+Rede ..|> RedeIn : implements
+Redner ..|> RednerIn : implements
+Sitzung ..|> SitzungIn : implements
+
+
+note "External Dependencies:\n- Javalin (Web Framework)\n- FreeMarker (Templates)\n- Java Collections API" as ExternalDeps
+ExternalDeps .. RESTHandler
+
+
+
+@enduml

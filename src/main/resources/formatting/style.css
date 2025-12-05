@@ -1,0 +1,368 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: beige;
+    color: black;
+    line-height: 1.5;
+}
+
+/* HEADER */
+header {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Link to come back to header (Startseite) */
+header a:not(.main-nav a) {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Navigation */
+.main-nav {
+    background-color: lightskyblue;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 12px;
+    display: inline-block;
+}
+
+.main-nav a:hover {
+    background-color: darkblue;
+}
+
+/* Search Section */
+.search-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid mediumblue;
+}
+
+.search-box {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+#searchInput {
+    padding: 10px;
+    flex: 1;
+    border: 1px solid mediumblue;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: royalblue;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid mediumblue;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 24px;
+    color: steelblue;
+    margin: 0 0 5px 0;
+}
+
+/* Cards and lists */
+.redner-list, .fraktionen-list, .sitzungen-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.redner-card, .fraktion-card, .sitzung-card {
+    background-color: white;
+    border: 1px solid mediumblue;
+    padding: 20px;
+}
+
+.redner-card h3, .fraktion-card h3, .sitzung-card h3 {
+    margin: 0 0 10px 0;
+    color: steelblue;
+}
+
+/* Detail Pages */
+.redner-header, .rede-header {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid mediumblue;
+    margin-bottom: 20px;
+}
+
+.rede-text {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid mediumblue;
+    margin-bottom: 20px;
+}
+
+.text-content {
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Reden list */
+.reden-list {
+    margin-top: 20px;
+}
+
+.rede-item {
+    background-color: white;
+    border: 1px solid mediumblue;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.rede-item h3 {
+    margin: 0 0 10px 0;
+}
+
+.rede-item h3 a {
+    color: steelblue;
+    text-decoration: none;
+}
+
+.rede-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.rede-preview {
+    color: dimgray;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Statistiken */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-box {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid mediumblue;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: steelblue;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: dimgray;
+}
+
+.top-redner-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid mediumblue;
+}
+
+.fraktion-bar {
+    background: steelblue;
+    height: 20px;
+    margin: 5px 0;
+    color: white;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+/* Filter and sort */
+.filter-options, .sort-options {
+    background-color: aliceblue;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid silver;
+}
+
+.filter-options label, .sort-options label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filter-options select, .sort-options select {
+    padding: 8px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+/* Kommentar */
+.kommentare-section {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid mediumblue;
+}
+
+.kommentar {
+    background-color: aliceblue;
+    padding: 15px;
+    margin: 12px 0;
+    border-left: 4px solid steelblue;
+}
+
+/* For footer */
+footer {
+    background-color: lightsteelblue;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    color: dimgray;
+    border: 1px solid silver;
+}
+
+footer a {
+    color: royalblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Utility classes */
+.metadata {
+    color: dimgray;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.stat-badge {
+    background: steelblue;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.loading {
+    color: dimgray;
+    font-style: italic;
+    text-align: center;
+    padding: 30px;
+    background-color: whitesmoke;
+}
+
+.error {
+    color: red;
+    background: mistyrose;
+    padding: 15px;
+    border-left: 4px solid red;
+    margin: 10px 0;
+}
+
+.info {
+    color: steelblue;
+    background: aliceblue;
+    padding: 15px;
+    border-left: 4px solid steelblue;
+    margin: 10px 0;
+}
+
+/* General link */
+a {
+    color: royalblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Respons */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .stats-grid,
+    .redner-list,
+    .fraktionen-list,
+    .sitzungen-list,
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .main-nav {
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+
+    .filter-options, .sort-options {
+        text-align: center;
+    }
+
+    .filter-options select, .sort-options select {
+        width: 100%;
+        max-width: 200px;
+    }
+
+}
