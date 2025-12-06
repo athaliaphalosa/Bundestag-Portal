@@ -69,5 +69,5 @@ The project is completed for the university assignment.
 ## Screenshots
 
 ### Homepage
-![Homepage](assets/homepage.png)
+![Homepage](assets/Homepage.png)
 
