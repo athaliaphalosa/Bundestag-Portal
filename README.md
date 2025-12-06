@@ -66,8 +66,65 @@ Author: Athalia Bernice Phalosa
 ## Project status
 The project is completed for the university assignment.
 
-## Screenshots
+## Website Screenshots
 
 ### Homepage
 ![Homepage](assets/Homepage.png)
+
+### Search Abegordneten (Politican)
+![Search Abegordneten](assets/AbgeordnetenSuchen.png)
+![Search Abegordneten2](assets/AbgeoirdnetenSuchen2.png)
+![Search Abegordneten3](assets/AbgeordnetenSuchen2.png)
+
+### List Abegordneten
+![Abegordneten](assets/AbgeordnetenAnzeigen.png)
+
+### Abegordneten Sort-Option
+![Abegordneten Sort](assets/AbgeordnetenSortierung.png)
+
+### Show all speechses(Rede) by the chosen speaker(Redner)
+![RedederRedner](assets/RedederRedner.png)
+
+### Show speechses(Rede) detail by the chosen speaker(Redner) and all commentar from another politican (Abgeordneten)
+![Reded](assets/RedeAnzeigen.png)
+![Kommentar](assets/Kommentare.png)
+
+### Show all parliamentary group (Fraktionen)
+![Fraktion](assets/FraktionenAnzeigen.png)
+
+### Show all Sessions (Sitzungen)
+![Sitzung](assets/SitzungenAnzeigen.png)
+
+### Show statistics (Statistiken)
+![Sitzung1](assets/StatistikenAnzeigen.png)
+![Sitzung2](assets/StatistikengAnzeigen2.png)
+
+### Show OPEN API with Swager
+![OpenApi](assets/OpenAPIinSwagger.png)
+![OpenApi1](assets/Swagger2.png)
+
+### Show OPEN API JSON Format
+![OpenApi2](assets/OpenAPIinJSON.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
