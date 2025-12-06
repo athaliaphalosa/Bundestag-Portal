@@ -29,8 +29,12 @@ The application reads XML files from the /resources/20/ folder (directory).
 This folder contains all Bundestag data in XML format, which are parsed and loaded when the application starts.
 
 ## Installation/Run
-In "utils" Class, run code in MainUbung3 (org.texttechnologylab.ppr.blatt3.utils.MainUbung3).
-Then open in browser http://localhost:7070
+1. Navigate to utils package
+2. Run the class:
+      MainUbung3  
+      (org.texttechnologylab.ppr.blatt3.utils.MainUbung3)
+3. Open the app in browser:
+   👉 http://localhost:7070
 
 ## API Endpoints (JSON)
 | Endpoint                 | Description                                                                |
@@ -61,3 +65,9 @@ Author: Athalia Bernice Phalosa
 
 ## Project status
 The project is completed for the university assignment.
+
+## Screenshots
+
+### Homepage
+![Homepage](assets/homepage.png)
+
