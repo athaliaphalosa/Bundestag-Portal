@@ -23,6 +23,7 @@ FreeMarker is also used, along with FTL templates and CSS files located in the r
 - Template Engine: FreeMarker (.ftl files)
 - Data Handling: In memory collections stored in ObjectFactory (for demonstration purposes)
 - API Documentation: Swagger/OpenAPI 
+- Fronted/Styling: CSS
 
 ## Daten
 The application reads XML files from the /resources/20/ folder (directory). 
@@ -53,6 +54,10 @@ This folder contains all Bundestag data in XML format, which are parsed and load
 Interactive API documentation is available at: http://localhost:7070/swagger .
 Use this interface to explore all available routes, test queries, and see response structures.
 - Note: But there is error in speeches (Rede) and sessions (Sitzung), because `java.time.LocalTime` not supported by default: add Module \"com.fasterxml.jackson.datatype:jackson-datatype-jsr310\"
+
+## Fronted/Styling (CSS)
+The application uses custom CSS to provide a modern and responsive user interface. It is not based on any external UI framework (like Bootstrap or Tailwind), but it implements many UI/UX best practices:
+Key Features of the CSS
 
 ## Roadmap
 Additional features may be added in the future.
