@@ -72,15 +72,15 @@ The project is completed for the university assignment.
 ![Homepage](assets/Homepage.png)
 
 ### Search Abegordneten (Politican)
-![Search Abegordneten](assets/AbgeordnetenSuchen.png)
-![Search Abegordneten2](assets/AbgeoirdnetenSuchen2.png)
+![Search Abegordneten](assets/AbgeordneteSuche.png)
+![Search Abegordneten2](assets/AbegoirdneteSuche2.png)
 ![Search Abegordneten3](assets/AbgeordnetenSuchen2.png)
 
 ### List Abegordneten
 ![Abegordneten](assets/AbgeordnetenAnzeigen.png)
 
 ### Abegordneten Sort-Option
-![Abegordneten Sort](assets/AbgeordnetenSortierung.png)
+![Abegordneten Sort](assets/AbgeordneteSortierung.png)
 
 ### Show all speechses(Rede) by the chosen speaker(Redner)
 ![RedederRedner](assets/RedederRedner.png)
@@ -97,7 +97,7 @@ The project is completed for the university assignment.
 
 ### Show statistics (Statistiken)
 ![Sitzung1](assets/StatistikenAnzeigen.png)
-![Sitzung2](assets/StatistikengAnzeigen2.png)
+![Sitzung2](assets/StatistikenAnzeigen2.png)
 
 ### Show OPEN API with Swager
 ![OpenApi](assets/OpenAPIinSwagger.png)
